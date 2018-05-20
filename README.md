@@ -22,3 +22,33 @@ Simple & fast header-only C++17 router for any HTTP server. Routes about 10-100 
 
     r.route("GET", 3, "/service/candy/lollipop", 23, &userData);
 ```
+
+### Runtime dump
+```
+[28 million req/sec] for URL: /service/candy/lollipop
+[32 million req/sec] for URL: /service/candy/gum
+[32 million req/sec] for URL: /service/candy/seg_råtta
+[30 million req/sec] for URL: /service/candy/lakrits
+[46 million req/sec] for URL: /service/shutdown
+[75 million req/sec] for URL: /
+[68 million req/sec] for URL: /some_file.html
+[62 million req/sec] for URL: /another_file.jpeg
+Checksum: 80000000
+
+[/service/candy/lollipop]
+Now serving candy of kind lollipop
+[/service/candy/gum]
+Now serving candy of kind gum
+[/service/candy/seg_råtta]
+Now serving candy of kind seg_råtta
+[/service/candy/lakrits]
+Now serving candy of kind lakrits
+[/service/shutdown]
+Shutting down now
+[/]
+Serving file: 
+[/some_file.html]
+Serving file: some_file.html
+[/another_file.jpeg]
+Serving file: another_file.jpeg
+```
