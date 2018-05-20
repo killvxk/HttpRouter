@@ -1,10 +1,11 @@
 # HttpRouter
 Simple & fast header-only C++17 router for any HTTP server. Routes about 20-90 million URLs a second.
 
+* Patterns with wildcards, parameters & optionals
+* Functional handlers
+* Cross-platform standard C++17
 * SIMD/zero-copy parsing
 * No memory allocations
-* Patterns with wildcards, parameters & optionals
-* Cross-platform standard C++17
 
 ```c++
     struct UserData {
