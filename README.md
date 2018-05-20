@@ -1,9 +1,10 @@
 # HttpRouter
-Simple & fast header-only C++17 router for any HTTP server. Routes about 10-100 million URLs a second.
+Simple & fast header-only C++17 router for any HTTP server. Routes about 20-90 million URLs a second.
 
-* Wildcards
-* Parameters
-* Optionals
+* SIMD/zero-copy parsing
+* No memory allocations
+* Patterns with wildcards, parameters & optionals
+* Cross-platform standard C++17
 
 ```c++
     struct UserData {
@@ -12,11 +13,11 @@ Simple & fast header-only C++17 router for any HTTP server. Routes about 10-100 
 
     HttpRouter<UserData *> r;
 
-    r.add("GET", "/service/candy/:kind", [](UserData *user, std::vector<std::string_view> &args) {
+    r.add("GET", "/service/candy/:kind", [](UserData *user, auto &args) {
         std::cout << "Now serving candy of kind " << args[0] << std::endl;
     });
 
-    r.add("GET", "/service/shutdown", [](UserData *user, std::vector<std::string_view> &args) {
+    r.add("GET", "/service/shutdown", [](UserData *user, auto &args) {
         std::cout << "Shutting down now" << std::endl;
     });
 
